@@ -8,4 +8,4 @@ or :
   - git clone https://github.com/ariabishma/
   
 or :   
-  - <script type="text/javascript" src="https://cdn.rawgit.com/ariabishma/wf2js/fcdf11a2/wf2.js"></script>
+  - <script type="text/javascript" src="https://cdn.rawgit.com/ariabishma/wf2js/fcdf11a2/wf2.js" ></script>
