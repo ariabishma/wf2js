@@ -1,5 +1,5 @@
 # wf2
-wf2 is function management framework  ,  written in EcmaScript 6 
+wf2 is function management framework  ,  written in EcmaScript 
 
 # Installation
   - npm i wf2js
