@@ -27,11 +27,48 @@
 
    this.methods = data.methods;
    this.data = data.data;
-   this.name = "bishma";
+   let signals = {};
 
    this.qs = function(text){
      const elment = document.querySelectorAll(text);
      return new wf2QsCore(elment,this);
+   };
+
+
+   render(this);
+   //reactive function
+   function pushReactive(n,att,obj){
+     if (!obj[att])  obj[att] = []
+
+      n.textContent = obj[att]
+     if(!signals[att]) signals[att] = []
+      signals[att].push(()=>n.textContent = obj[att])
+   };
+
+   function Reactive(v , obj) {
+     var val = obj[v];
+     Object.defineProperty(obj,v,{
+       get(){
+         return val;
+       },
+       set(nV){
+         val = nV ;
+         signals[v].forEach((sigHandlers) => sigHandlers());
+       }
+     });
+   };
+   //end reactive function
+
+   function render(t){
+     const nodes = document.querySelectorAll("[wf-model]");
+     for(const node of nodes){
+       pushReactive(node,node.getAttribute("wf-model"),t.data);
+     }
+
+
+     for(const i in t.data){
+       Reactive(i,t.data);
+     }
    };
 
    this.htReq = function(inpt){
@@ -53,6 +90,10 @@
      return this.data[dat_name] = value;
    };
 
+   return {
+     obj : this ,
+     data : this.data
+   }
 
  };
 
