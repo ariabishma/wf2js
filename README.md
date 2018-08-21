@@ -1,5 +1,5 @@
 # wf2
-![](https://data.jsdelivr.com/v1/package/npm/wf2js/badge)](https://www.jsdelivr.com/package/npm/wf2js)
+
 
 wf2 is function management framework  ,  written in EcmaScript 
 
