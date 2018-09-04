@@ -1,7 +1,7 @@
 # wf2
 
 
-wf2 is function management framework  ,  written in EcmaScript 
+wf2 is reactive framework  ,  written in EcmaScript 2015 (ES6)
 
 # Installation
   - npm i wf2js
